@@ -1,7 +1,7 @@
 class Jogo {
 private:
-// Tabuleiro tabuleiro[8][8];
+    // Tabuleiro tabuleiro[8][8];
 
 public:
-void imprimeTabuleiro();
+// void imprimeTabuleiro();
 };
