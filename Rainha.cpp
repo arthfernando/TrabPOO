@@ -3,12 +3,31 @@
 
 using namespace std;
 
-string Rainha::desenha() {
-    return "R";
+void Rainha::desenha() {
+    (getCor() == 1) ? cout << "Q" : cout << "q";
 }
 
-void Rainha::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
-
+bool Rainha::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
+    if(linhaDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro
+        if((linhaDest != linhaOrg) || (colDest != colOrg)) {
+            if((linhaDest == linhaOrg)){ //andar pra frente
+                return true;
+            } else
+            if((colDest == colOrg)) {
+                return true;
+            } else
+            if(abs(linhaDest-linhaOrg) == abs((colDest-colOrg))) {
+                return true;
+            } else {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }
 
 bool Rainha::getCor() {

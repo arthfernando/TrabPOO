@@ -5,7 +5,7 @@ class Tabuleiro {
 private:
     Posicao tabuleiro[8][8];
     Posicao a;
-    Rei r;
+    // Rei r;
 
 public:
     Tabuleiro();

@@ -34,13 +34,13 @@ void Tabuleiro::imprimeTabuleiro() {
             
             if(tabuleiro[i][j].getCor() == 0) {
                 if(tabuleiro[i][j].getStatus()) {
-                    cout << "\033[30;47m" << r.desenha() << " " << "\033[m"; //branco           
+                    cout << "\033[30;47m" << " " << " " << "\033[m"; //branco           
                 } else {
                     cout << "\033[30;47m" << " " << " " << "\033[m"; //branco
                 }
             } else {
                 if(tabuleiro[i][j].getStatus()) {
-                    cout << "\033[1;37;40m" << r.desenha() << " " << "\033[m"; //preto    
+                    cout << "\033[1;37;40m" << " " << " " << "\033[m"; //preto    
                 } else {
                     cout << "\033[1;37;40m" << " " << " " << "\033[m"; //preto
                 }

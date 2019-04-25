@@ -21,3 +21,5 @@
 .vscode/ipch/7913e3798506e6e/mmap_address.bin
 .vscode/ipch/26ff2e7e2b6fd9f8/mmap_address.bin
 .vscode/ipch/254d92f753d83dd5/mmap_address.bin
+*.bin
+*.ipch

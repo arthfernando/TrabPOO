@@ -4,16 +4,19 @@
 using namespace std;
 
 string Bispo::desenha() {
-    return "B";
+  (getCor() == 1) ? cout << "B" : cout << "b";
 }
 
-void Bispo::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
-    if((linhaDest-linhaOrg)==(colDest-colOrg)){
-      return (true);
+bool Bispo::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
+  if(linhaDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro
+    if((linhaDest != linhaOrg) && (colDest != colOrg)){ //verifica se é possivel mover
+      if((linhaDest-linhaOrg)==(colDest-colOrg)) {  //verifica posicao
+        return (true);
+      } else {
+        return (false);
+      }
     }
-    else{
-      return (false);
-    }
+  }
 }
 
 bool Bispo::getCor() {

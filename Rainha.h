@@ -8,8 +8,8 @@ private:
     bool status;
     bool cor;
 public:
-    string desenha();
-    void checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
+    void desenha();
+    bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
     bool getCor();
     void setCor(bool i);
 };

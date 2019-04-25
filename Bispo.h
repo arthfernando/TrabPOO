@@ -11,7 +11,7 @@ private:
     // Posicao posicao;
 public:
     string desenha();
-    void checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
+    bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
     bool getCor();
     void setCor(bool i);
 };
