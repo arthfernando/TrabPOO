@@ -7,16 +7,19 @@ void Rainha::desenha() {
     (getCor() == 1) ? cout << "Q" : cout << "q";
 }
 
-bool Rainha::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
-    if(linhaDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro
-        if((linhaDest != linhaOrg) || (colDest != colOrg)) {
-            if((linhaDest == linhaOrg)){ //andar pra frente
+bool Rainha::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
+
+    int lOrg = linhaOrg - 97;
+    int lDest = linhaDest - 97;
+    if(lDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro
+        if((lDest != lOrg) || (colDest != colOrg)) {
+            if((lDest == lOrg)){ //andar pra frente
                 return true;
             } else
             if((colDest == colOrg)) {
                 return true;
             } else
-            if(abs(linhaDest-linhaOrg) == abs((colDest-colOrg))) {
+            if(abs(lDest-lOrg) == abs((colDest-colOrg))) {
                 return true;
             } else {
                 return false;

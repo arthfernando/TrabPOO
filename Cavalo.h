@@ -3,15 +3,18 @@
 
 using namespace std;
 
-class Rei {
+class Cavalo {
 private:
     string id;
     bool status;
     bool cor;
+    bool moveu;
     // Posicao posicao;
 public:
-    void desenha();
+    Cavalo();
+    string desenha();
+    int modulo(int x);
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();
-    void setCor(bool i);
+    void setCor(bool);
 };

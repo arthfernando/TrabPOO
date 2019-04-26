@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Tabuleiro.h"
-// #include "Rei.h"
+#include "Cavalo.h"
+//#include "Torre.h"
 
 
 using namespace std;
@@ -9,10 +10,9 @@ using namespace std;
 
 int main() {
     Tabuleiro t;
-    Rei k;
-    t.inicio(1);
+    Cavalo c;
     t.imprimeTabuleiro();
-    int a = k.checaMovimento(3,0,3,0);
+    int a = c.checaMovimento('d',5,'f',1);
     cout << a << endl;
 
     return 0;

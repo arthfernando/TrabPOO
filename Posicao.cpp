@@ -1,6 +1,5 @@
 #include "Posicao.h"
 #include <iostream>
-
 using namespace std;
 
 void Posicao::setCor(int c) {
@@ -29,4 +28,11 @@ void Posicao::setStatus(bool b) {
 
 bool Posicao::getStatus() {
     return status;
+}
+void Posicao::setPecas(char p){
+
+    peca = p;
+}
+char Posicao::getPecas(){
+    return peca;
 }

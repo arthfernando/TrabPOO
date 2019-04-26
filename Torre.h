@@ -3,15 +3,17 @@
 
 using namespace std;
 
-class Rei {
+class Torre {
 private:
     string id;
     bool status;
     bool cor;
+    bool moveu;
     // Posicao posicao;
 public:
-    void desenha();
+    Torre();
+    string desenha();
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();
-    void setCor(bool i);
+    void setCor(bool);
 };

@@ -10,8 +10,8 @@ private:
     bool cor;
     // Posicao posicao;
 public:
-    string desenha();
-    bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
+    void desenha();
+    bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();
     void setCor(bool i);
 };

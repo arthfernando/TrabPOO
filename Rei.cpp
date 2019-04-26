@@ -7,16 +7,18 @@ void Rei::desenha() {
     (getCor() == 1) ? cout << "K" : cout << "k";
 }
 
-bool Rei::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
-    if(linhaDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro
-        if((linhaDest != linhaOrg) || (colDest != colOrg)) {
-            if((linhaDest == linhaOrg) && (abs(colDest - colOrg) == 1)){ //andar pra frente
+bool Rei::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
+    int lOrg = linhaOrg - 97;
+    int lDest = linhaDest - 97;
+    if(lDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro
+        if((lDest != lOrg) || (colDest != colOrg)) {
+            if((lDest == lOrg) && (abs(colDest - colOrg) == 1)){ //andar pra frente
                 return true;
             } else
-            if((colDest == colOrg) && (abs(linhaDest - linhaOrg) == 1)) {
+            if((colDest == colOrg) && (abs(lDest - lOrg) == 1)) {
                 return true;
             } else
-            if(abs(linhaDest-linhaOrg) == abs((colDest-colOrg))) {
+            if(abs(lDest-lOrg) == abs((colDest-colOrg))) {
                 return true;
             } else {
                 return false;
