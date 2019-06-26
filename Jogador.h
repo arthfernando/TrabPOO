@@ -1,3 +1,6 @@
+#ifndef JOGADOR_H_
+#define JOGADOR_H_
+
 #include "Peca.h"
 
 using std::string;
@@ -10,5 +13,7 @@ private:
 
 public:
     Jogador();
-    void setPlayer(std::string nome, int ordem);
+    void setPlayer(string nome1,int ord);
+    void imprimir();
 };
+#endif

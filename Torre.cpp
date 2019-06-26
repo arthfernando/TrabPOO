@@ -5,6 +5,10 @@ Torre::Torre(){
     /*ocupada*/
     status = 1;
 }
+void Torre::desenha() {
+  // imprime maiscula se branca (1) e minuscula se preto (0)
+  (getCor() == 1) ? cout << "T" : cout << "t";
+}
 bool Torre::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest){
 
 // armazena char como int para verificar na matriz
@@ -30,4 +34,13 @@ bool Torre::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDes
         return false;
     }
 
+}
+// retorna cor do bispo
+bool Torre::getCor() {
+    return cor;
+}
+
+// atribui cor ao bispo
+void Torre::setCor(bool i) {
+    cor = i;
 }

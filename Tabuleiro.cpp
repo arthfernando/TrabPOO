@@ -1,4 +1,5 @@
 #include "Tabuleiro.h"
+#include "Posicao.h"
 #include <iostream>
 
 using namespace std;
@@ -62,12 +63,10 @@ Tabuleiro::Tabuleiro() {
 
 void Tabuleiro::imprimeTabuleiro() {
     // imprime os indices da coluna do tabuleiro
-    a.imprimeColuna();
     cout << endl;
     // bloco que imprime as casas e as pecas
     for(int i = 0; i < 8; i++) {
         if (i >= 0) {
-            a.imprimeLinha(i);
         } else {
             cout << " ";
         }

@@ -8,5 +8,10 @@ private:
     Peca *pecas[32];
     Tabuleiro tabuleiro;
 public:
+    Jogo();
     Jogo(std::string jogador1,std::string jogador2);
+    void inserirNome(std::string jogador1,std::string jogador2);
+    void CarregarJogo(string arquivo);
+    void SalvarJogo();
+    void imprimir();
 };

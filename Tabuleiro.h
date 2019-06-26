@@ -1,3 +1,7 @@
+#ifndef TABULEIRO_H_
+#define TABULEIRO_H_
+
+#include <iostream>
 #include "Posicao.h"
 
 class Tabuleiro {
@@ -9,3 +13,4 @@ public:
     void imprimeTabuleiro();
     
 };
+#endif

@@ -2,6 +2,10 @@
 #include <iostream>
 using namespace std;
 
+
+Posicao::Posicao(){
+    
+}
 // atribui cor a posicao
 void Posicao::setCor(int c) {
     cor = c;
@@ -39,10 +43,10 @@ bool Posicao::getStatus() {
 // atribui uma peca a posicao
 void Posicao::setPecas(char p){
 
-    peca = p;
+    //peca = p;
 }
 
 // retorna peca que esta na posicao
 char Posicao::getPecas(){
-    return peca;
+    //return peca;
 }
