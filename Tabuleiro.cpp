@@ -1,14 +1,10 @@
 #include "Tabuleiro.h"
 #include <iostream>
 
-// 40 - fundo preto
-// 47 - fundo branco
-// 30 - fonte preta
-// 37 - fonte cinza
-
 using namespace std;
 
 Tabuleiro::Tabuleiro() {
+    // indica cor das casas do tabuleiro
     for(int i = 0; i < 8; i++) {
         for(int j = 0; j < 8; j++) {
             ((i+j)%2 == 0) ? tabuleiro[i][j].setCor(0) : tabuleiro[i][j].setCor(1);
@@ -16,6 +12,7 @@ Tabuleiro::Tabuleiro() {
         }
     }
 
+// inicia pecas brancas na posicao inicial padrao
     tabuleiro[0][0].setPecas('T');
     tabuleiro[1][0].setPecas('C');
     tabuleiro[2][0].setPecas('B');
@@ -34,8 +31,7 @@ Tabuleiro::Tabuleiro() {
     tabuleiro[6][1].setPecas('P');
     tabuleiro[7][1].setPecas('P');
 
-
-    
+// mostra posicoes vazias
     for(int i = 0; i < 8;i++){
         for(int j = 2; j < 6; j++){
             tabuleiro[i][j].setPecas(' ');
@@ -43,6 +39,7 @@ Tabuleiro::Tabuleiro() {
 
     }
 
+// inicia pecas pretas nas posicoes iniciais padrao
     tabuleiro[0][6].setPecas('p');
     tabuleiro[1][6].setPecas('p');
     tabuleiro[2][6].setPecas('p');
@@ -64,8 +61,10 @@ Tabuleiro::Tabuleiro() {
 }
 
 void Tabuleiro::imprimeTabuleiro() {
+    // imprime os indices da coluna do tabuleiro
     a.imprimeColuna();
     cout << endl;
+    // bloco que imprime as casas e as pecas
     for(int i = 0; i < 8; i++) {
         if (i >= 0) {
             a.imprimeLinha(i);

@@ -1,11 +1,12 @@
 #include <string>
+#include "Peca.h"
 
 using namespace std;
 
-class Rainha {
+class Rainha: public Peca {
 private:
     string id;
-    bool status;
+    bool status; //indica se esta no jogo
     bool cor;
 public:
     void desenha();

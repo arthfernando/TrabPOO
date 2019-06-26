@@ -1,7 +1,12 @@
+#include "Tabuleiro.h"
+#include "Peca.h"
+#include "Jogador.h" 
+
 class Jogo {
 private:
-    // Tabuleiro tabuleiro[8][8];
-
+    Jogador player[2];
+    Peca *pecas[32];
+    Tabuleiro tabuleiro;
 public:
-// void imprimeTabuleiro();
+    Jogo(std::string jogador1,std::string jogador2);
 };

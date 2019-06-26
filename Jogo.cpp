@@ -1,19 +1,27 @@
 #include <iostream>
 #include "Tabuleiro.h"
-#include "Cavalo.h"
-//#include "Torre.h"
-
-
-using namespace std;
-
+#include "Jogador.h"
+#include "Jogo.h"
 
 
 int main() {
     Tabuleiro t;
-    Cavalo c;
-    t.imprimeTabuleiro();
-    int a = c.checaMovimento('d',5,'f',1);
-    cout << a << endl;
+    Jogador *j;
+    std::string nome1;
+	std::string nome2;
+    
+	std::cout << "Nome do Jogador 1 (Brancas): ";
+    std::cin >> nome1;
+	std::cout << "Nome do Jogador 2 (Pretas): ";
+    std::cin >> nome2;
+	
+	j[0].setPlayer(nome1, 1);
+	
 
     return 0;
+}
+
+Jogo::Jogo(std::string jogador1, std::string jogador2) {
+    
+    
 }

@@ -1,15 +1,15 @@
 #include <string>
-// #include "Posicao.h"
+#include "Peca.h"
 
 using namespace std;
 
-class Bispo {
+class Bispo: public Peca {
 private:
     string id;
     bool status;
     bool cor;
-    // Posicao posicao;
 public:
+    Bispo();
     void desenha();
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();

@@ -1,11 +1,10 @@
-
 #include <iostream>
 
 class Posicao {
 private:
-    bool cor;
-    bool status;
-    char peca;
+    bool cor; //indica cor da posicao (branca ou preta)
+    bool status; //indica se esta ocupada ou nao
+    Peca *peca; // indica qual peca esta na posicao --colocar linha e coluna
 public:
     void setCor(int c);
     int getCor();

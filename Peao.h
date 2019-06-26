@@ -1,18 +1,20 @@
 #include <string>
-// #include "Posicao.h"
+#include "Peca.h"
 
 using namespace std;
 
-class Peao {
+class Peao: public Peca {
 private:
     string id;
-    bool status;
+    bool status; //indica se esta no jogo
     bool cor;
-    bool moveu;
-    // Posicao posicao;
+    bool moveu; //indica se ja foi movida 
 public:
+    Peao();
+
     void desenha();
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
+    
     bool getCor();
     void setCor(bool i);
 };
