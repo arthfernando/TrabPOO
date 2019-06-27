@@ -1,9 +1,10 @@
 #include <iostream>
 #include "Torre.h"
 
-Torre::Torre(){
+Torre::Torre(bool c, bool o){
     /*ocupada*/
-    status = 1;
+    cor = c;
+    ordem = o;
 }
 string Torre::desenha() {
   // imprime maiscula se branca (1) e minuscula se preto (0)

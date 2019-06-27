@@ -3,6 +3,12 @@
 
 using namespace std;
 
+Rei::Rei(bool c, bool o) {
+  // indica que esta no tabuleiro
+  cor = c;
+  ordem = o;
+}
+
 string Rei::desenha() {
      if(getCor()){
       return "K";

@@ -5,12 +5,12 @@ using namespace std;
 
 class Cavalo: public Peca {
 private:
-    string id;
+    bool ordem;
     bool status; //indica se esta no jogo
     bool cor;
     bool moveu; //indica se moveu
 public:
-    Cavalo();
+    Cavalo(bool cor, bool ordem);
     string desenha();
     int modulo(int x);
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);

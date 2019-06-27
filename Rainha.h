@@ -5,10 +5,11 @@ using namespace std;
 
 class Rainha: public Peca {
 private:
-    string id;
+    bool ordem;
     bool status; //indica se esta no jogo
     bool cor;
 public:
+    Rainha(bool cor, bool ordem);
     string desenha();
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();

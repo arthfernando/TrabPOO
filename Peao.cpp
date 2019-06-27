@@ -11,13 +11,12 @@ Peao::Peao(bool c, bool o) {
 
 string Peao::desenha() {
   // imprime maiuscula se branca e minuscula se preta
-   //if(getCor()){
+   if(getCor()){
       return "P";
-  //}else{
-    //  return "p";
-  //}
+  }else{
+      return "p";
+  }
 }
-
 
 bool Peao::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
   int lOrg = linhaOrg - 97;

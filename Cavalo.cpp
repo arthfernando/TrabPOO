@@ -1,9 +1,10 @@
 #include <iostream>
 #include "Cavalo.h"
 
-Cavalo::Cavalo(){
+Cavalo::Cavalo(bool c, bool o){
     /*ocupada*/
-    status = 1;
+    ordem = o;
+    cor = c;
 }
 
 string Cavalo::desenha() {

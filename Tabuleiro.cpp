@@ -22,23 +22,23 @@ Tabuleiro::Tabuleiro(Peca *peca[32]) {
     }
 
 // inicia pecas brancas na posicao inicial padrao
-    tabuleiro[0][0].setPecas(peca[0]);
-   /*  tabuleiro[1][0].setPecas(peca[0]);
-    tabuleiro[2][0].setPecas(peca[0]);
-    tabuleiro[3][0].setPecas(peca[0]);
-    tabuleiro[4][0].setPecas(peca[0]);
-    tabuleiro[5][0].setPecas(peca[0]);
-    tabuleiro[6][0].setPecas(peca[0]);
-    tabuleiro[7][0].setPecas(peca[0]);
+    tabuleiro[0][0].setPecas(peca[8]); 
+    tabuleiro[1][0].setPecas(peca[9]);
+    tabuleiro[2][0].setPecas(peca[10]);
+    tabuleiro[3][0].setPecas(peca[11]);
+    tabuleiro[4][0].setPecas(peca[12]);
+    tabuleiro[5][0].setPecas(peca[13]);
+    tabuleiro[6][0].setPecas(peca[14]);
+    tabuleiro[7][0].setPecas(peca[15]);
 
     tabuleiro[0][1].setPecas(peca[0]);
-    tabuleiro[1][1].setPecas(peca[0]);
-    tabuleiro[2][1].setPecas(peca[0]);
-    tabuleiro[3][1].setPecas(peca[0]);
-    tabuleiro[4][1].setPecas(peca[0]);
-    tabuleiro[5][1].setPecas(peca[0]);
-    tabuleiro[6][1].setPecas(peca[0]);
-    tabuleiro[7][1].setPecas(peca[0]); */
+    tabuleiro[1][1].setPecas(peca[1]);
+    tabuleiro[2][1].setPecas(peca[2]);
+    tabuleiro[3][1].setPecas(peca[3]);
+    tabuleiro[4][1].setPecas(peca[4]);
+    tabuleiro[5][1].setPecas(peca[5]);
+    tabuleiro[6][1].setPecas(peca[6]);
+    tabuleiro[7][1].setPecas(peca[7]);
 
 // mostra posicoes vazias
      for(int i = 0; i < 8;i++){
@@ -49,23 +49,23 @@ Tabuleiro::Tabuleiro(Peca *peca[32]) {
     }
 
 // inicia pecas pretas nas posicoes iniciais padrao
-    /* tabuleiro[0][6].setPecas(peca[0]);
-    tabuleiro[1][6].setPecas(peca[0]);
-    tabuleiro[2][6].setPecas(peca[0]);
-    tabuleiro[3][6].setPecas(peca[0]);
-    tabuleiro[4][6].setPecas(peca[0]);
-    tabuleiro[5][6].setPecas(peca[0]);
-    tabuleiro[6][6].setPecas(peca[0]);
-    tabuleiro[7][6].setPecas(peca[0]);
+    tabuleiro[0][6].setPecas(peca[24]);
+    tabuleiro[1][6].setPecas(peca[25]);
+    tabuleiro[2][6].setPecas(peca[26]);
+    tabuleiro[3][6].setPecas(peca[27]);
+    tabuleiro[4][6].setPecas(peca[28]);
+    tabuleiro[5][6].setPecas(peca[29]);
+    tabuleiro[6][6].setPecas(peca[30]);
+    tabuleiro[7][6].setPecas(peca[31]);
 
-    tabuleiro[0][7].setPecas(peca[0]);
-    tabuleiro[1][7].setPecas(peca[0]);
-    tabuleiro[2][7].setPecas(peca[0]);
-    tabuleiro[3][7].setPecas(peca[0]);
-    tabuleiro[4][7].setPecas(peca[0]);
-    tabuleiro[5][7].setPecas(peca[0]);
-    tabuleiro[6][7].setPecas(peca[0]);
-    tabuleiro[7][7].setPecas(peca[0]); */
+    tabuleiro[0][7].setPecas(peca[16]);
+    tabuleiro[1][7].setPecas(peca[17]);
+    tabuleiro[2][7].setPecas(peca[18]);
+    tabuleiro[3][7].setPecas(peca[19]);
+    tabuleiro[4][7].setPecas(peca[20]);
+    tabuleiro[5][7].setPecas(peca[21]);
+    tabuleiro[6][7].setPecas(peca[22]);
+    tabuleiro[7][7].setPecas(peca[23]);
 }
 
 void Tabuleiro::imprimeTabuleiro() {

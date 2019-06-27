@@ -3,17 +3,18 @@
 
 using namespace std;
 
-Bispo::Bispo() {
-  // indica que esta ocupado
-    status = 1;
+Bispo::Bispo(bool c, bool o) {
+  // indica que esta no tabuleiro
+  cor = c;
+  ordem = o;
 }
 
 string Bispo::desenha() {
   // imprime maiscula se branca (1) e minuscula se preto (0)
    if(getCor()){
-      return "P";
+      return "B";
   }else{
-      return "p";
+      return "b";
   }
 }
 

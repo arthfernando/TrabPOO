@@ -3,6 +3,12 @@
 
 using namespace std;
 
+Rainha::Rainha(bool c, bool o) {
+  // indica que esta no tabuleiro
+  cor = c;
+  ordem = o;
+}
+
 string Rainha::desenha() {
     // imprime maiuscula se branca e minuscula se preta
      if(getCor()){
