@@ -3,9 +3,12 @@
 
 using namespace std;
 
-void Rei::desenha() {
-    // imprime maiuscula se branca e minuscula se preta
-    (getCor() == 1) ? cout << "K" : cout << "k";
+string Rei::desenha() {
+     if(getCor()){
+      return "K";
+  }else{
+      return "k";
+  }
 }
 
 bool Rei::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {

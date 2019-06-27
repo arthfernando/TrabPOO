@@ -3,15 +3,21 @@
 
 using namespace std;
 
-Peao::Peao() {
+Peao::Peao(bool c, bool o) {
   // indica que esta no tabuleiro
-  status = 1;
+  cor = c;
+  ordem = o;
 }
 
-void Peao::desenha() {
+string Peao::desenha() {
   // imprime maiuscula se branca e minuscula se preta
-  (getCor() == 1) ? cout << "P" : cout << "p";
+   //if(getCor()){
+      return "P";
+  //}else{
+    //  return "p";
+  //}
 }
+
 
 bool Peao::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
   int lOrg = linhaOrg - 97;

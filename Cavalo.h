@@ -11,7 +11,7 @@ private:
     bool moveu; //indica se moveu
 public:
     Cavalo();
-    void desenha();
+    string desenha();
     int modulo(int x);
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();

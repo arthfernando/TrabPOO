@@ -8,9 +8,13 @@ Bispo::Bispo() {
     status = 1;
 }
 
-void Bispo::desenha() {
+string Bispo::desenha() {
   // imprime maiscula se branca (1) e minuscula se preto (0)
-  (getCor() == 1) ? cout << "B" : cout << "b";
+   if(getCor()){
+      return "P";
+  }else{
+      return "p";
+  }
 }
 
 bool Bispo::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {

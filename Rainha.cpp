@@ -3,9 +3,13 @@
 
 using namespace std;
 
-void Rainha::desenha() {
+string Rainha::desenha() {
     // imprime maiuscula se branca e minuscula se preta
-    (getCor() == 1) ? cout << "Q" : cout << "q";
+     if(getCor()){
+      return "Q";
+  }else{
+      return "q";
+  }
 }
 
 bool Rainha::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {

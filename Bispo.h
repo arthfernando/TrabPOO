@@ -10,7 +10,7 @@ private:
     bool cor;
 public:
     Bispo();
-    void desenha();
+    string desenha();
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();
     void setCor(bool i);

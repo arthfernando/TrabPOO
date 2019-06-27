@@ -22,6 +22,7 @@ void Peca::setPeca(bool c, bool s, bool m){
     moveu = m;
 }
 
+
 void Peca::setCor(bool c){
     cor = c;
 }

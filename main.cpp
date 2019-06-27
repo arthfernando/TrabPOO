@@ -6,12 +6,13 @@ using std::cin;
 using std::endl;
 
 int main() {
-    Tabuleiro t;
     Jogador *j;
     Jogo game;
     string nome1;
 	string nome2;
+    bool ordem = true;
     string entrada,arquivo;
+    int linhaOrg, colOrg, linhaDest, colDest;
     int opcao;
     bool novojogo = true;
     bool xeque_mate = true;
@@ -42,6 +43,30 @@ int main() {
 	
     /* passar os nomes dos jogadores*/
     game.inserirNome(nome1,nome2);
+    game.imprimirTabuleiro();
+
+    do{
+        if(ordem){
+            cout << "Jogador 1" << endl;
+            cout << "linha e coluna de origem" << endl;
+            cin >> linhaOrg >> colOrg;
+            cout << "linha e coluna de destino" << endl;
+            cin >> linhaDest >> colDest;
+            ordem = false;
+        }else{
+            cout << "Jogador 2" << endl;
+            cout << "linha e coluna de origem" << endl;
+            cin >> linhaOrg >> colOrg;
+            cout << "linha e coluna de destino" << endl;
+            cin >> linhaDest >> colDest;
+            ordem = true;
+        }
+
+        //game.verificarPeca();
+        /* Verificar qual peça esta na posicao e ver que cor é o jogador*/
+
+    }while(linhaOrg!=9);
+
 	//jogar.inserirNome(nome1,nome2);
     //jogar.imprimir();
     while(xeque_mate){

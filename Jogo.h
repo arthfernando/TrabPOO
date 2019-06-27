@@ -6,10 +6,11 @@ class Jogo {
 private:
     Jogador *player[2];
     Peca *pecas[32];
-    Tabuleiro tabuleiro;
+    Tabuleiro *tabuleiro;
 public:
     Jogo();
     void inserirNome(std::string jogador1,std::string jogador2);
     void CarregarJogo(string arquivo);
     void SalvarJogo();
+    void imprimirTabuleiro();
 };

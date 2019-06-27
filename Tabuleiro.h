@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Posicao.h"
+#include "Peca.h"
 
 class Tabuleiro {
 private:
@@ -10,6 +11,7 @@ private:
    
 public:
     Tabuleiro();
+    Tabuleiro(Peca *peca[32]);
     void imprimeTabuleiro();
     
 };

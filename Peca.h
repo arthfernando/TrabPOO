@@ -19,7 +19,7 @@ public:
     void setStatus();
     void setMov();
 
-    virtual void desenha() = 0;
+    virtual string desenha() = 0;
     virtual bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) = 0;
 };
 #endif

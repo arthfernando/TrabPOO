@@ -5,9 +5,12 @@ using namespace std;
 
 Posicao::Posicao(){
     
+    //pecas = new Peao();
+
 }
-// atribui cor a posicao
-void Posicao::setCor(int c) {
+
+void Posicao::setCor(int c){
+
     cor = c;
 }
 
@@ -41,12 +44,19 @@ bool Posicao::getStatus() {
 }
 
 // atribui uma peca a posicao
-void Posicao::setPecas(char p){
+void Posicao::setPecas(Peca *p){
 
-    //peca = p;
+   if(p == NULL){
+       cout << "entrou" << endl;
+   } 
+   pecas = p;
 }
-
 // retorna peca que esta na posicao
-char Posicao::getPecas(){
-    //return peca;
+string Posicao::getPecas(){
+
+    if(pecas == NULL){
+        return " ";
+    }else{
+        return pecas->desenha();
+    }
 }

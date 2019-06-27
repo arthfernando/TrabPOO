@@ -6,9 +6,13 @@ Cavalo::Cavalo(){
     status = 1;
 }
 
-void Cavalo::desenha() {
+string Cavalo::desenha() {
     // imprime maiuscula se branca e minuscula se preta
-  (getCor() == 1) ? cout << "C" : cout << "c";
+   if(getCor()){
+      return "C";
+  }else{
+      return "c";
+  }
 }
 
 // funcao modulo
