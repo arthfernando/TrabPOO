@@ -4,12 +4,14 @@
 using std::string;
 using std::cout;
 using std::endl;
+
 Jogador::Jogador() {
     nome = "";
+    cout << "Constr Padrao Jogador" << endl;
     ordem = 0;
-    for(int i = 0; i < 16; i++) {
-        pecas[i]->setCor("");
-    }
+    // for(int i = 0; i < 16; i++) {
+    //     pecas[i]->setCor("");
+    // }
 }
 
 /* void Jogador::setPlayer(std::string nome, int ordem) {
@@ -25,11 +27,13 @@ Jogador::Jogador() {
         }
     }
 }*/
-void Jogador::setPlayer(string n1, int ord){
-    nome = n1;
+void Jogador::setPlayer(string nome1, int ord){
+    cout << "Nome antes: " << nome << endl;
+    cout << "Atributo string" << nome1 << endl;
+    nome = nome1;
+    cout << "Nome depois" << nome << endl;
     ordem = ord;
 }
 void Jogador::imprimir(){
-
-    cout << "Nome" << nome << endl;
+    cout << "Nome impresso: " << nome << endl;
 }

@@ -5,10 +5,9 @@ using namespace std;
 
 class Torre: public Peca {
 private:
-    string id;
-    bool status; //indica se esta no jogo
+    bool status;
+    bool moveu;
     bool cor;
-    bool moveu; //indica se moveu
 public:
     Torre();
     void desenha();

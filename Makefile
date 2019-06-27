@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -g
 
-OBJS = Bispo.o Cavalo.o Peao.o Rainha.o Rei.o Torre.o Jogo.o Posicao.o Tabuleiro.o Peca.o Jogador.o
+OBJS = Bispo.o Cavalo.o Peao.o Rainha.o Rei.o Torre.o Jogo.o Posicao.o Tabuleiro.o Peca.o Jogador.o main.o
 
 xadrez: $(OBJS)
 	$(CC) -o xadrez $(OBJS)
@@ -17,6 +17,7 @@ Jogo.o: Jogador.h Tabuleiro.h Peca.h Jogo.h
 Peca.o: Peca.h
 Posicao.o: Posicao.h Peca.h
 Tabuleiro.o: Tabuleiro.h Posicao.h
+main.o: Jogo.h
 
 
 .PHONY : clean

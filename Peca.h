@@ -5,10 +5,20 @@
 using std::string;
 class Peca {
 private:
-    string cor;
+    string id;
+    bool status; //indica se esta no jogo
+    bool cor;
+    bool moveu; //indica se moveu
 public:
     Peca();
-    void setCor(string);
+    Peca(string, bool, bool, bool);
+    void setCor(bool);
+    bool getCor();
+
+    void setPeca(bool cor, bool status, bool moveu);
+    void setStatus();
+    void setMov();
+
     virtual void desenha() = 0;
     virtual bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) = 0;
 };
