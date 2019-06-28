@@ -18,7 +18,7 @@ public:
     void setStatus(bool b);
     bool getStatus();
     
-    void setPecas(Peca *p);
+    void setPecas(Peca *p, string s);
     Peca *getPecas();
 
     string desenhaPos();

@@ -27,6 +27,14 @@ void Peca::setCor(bool c){
     cor = c;
 }
 
+string Peca::getId() {
+    return id;
+}
+
+void Peca::setId(string s) {
+    id = s;
+}
+
 // setPegar() {
 
 // }

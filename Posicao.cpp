@@ -42,8 +42,9 @@ bool Posicao::getStatus() {
 }
 
 // atribui uma peca a posicao
-void Posicao::setPecas(Peca *p){
+void Posicao::setPecas(Peca *p, string s){
    pecas = p;
+   pecas->setId(s);
 }
 
 // void Posicao::setPecas(char c) {
@@ -66,7 +67,7 @@ string Posicao::desenhaPos() {
     if(pecas == NULL) {
         return " ";
     } else {
-        return pecas->;
+        return pecas->getId();
     }
 }
 

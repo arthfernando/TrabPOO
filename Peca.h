@@ -19,6 +19,8 @@ public:
     void setStatus();
     void setMov();
 
+    string getId();
+    void setId(string s);
 
     virtual string desenha() = 0;
     virtual bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) = 0;
