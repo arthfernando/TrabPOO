@@ -27,3 +27,10 @@ void Peca::setCor(bool c){
     cor = c;
 }
 
+// setPegar() {
+
+// }
+
+// getPegar() {
+
+// }

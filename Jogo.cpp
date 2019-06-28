@@ -55,8 +55,8 @@ void Jogo::imprimirTabuleiro() {
 }
 
 void Jogo::inserirNome(string jogador1, string jogador2){
-    player[0]->setPlayer(jogador1,1);
-    player[1]->setPlayer(jogador2,2);
+    player[0]->setPlayer(jogador1,0);
+    player[1]->setPlayer(jogador2,1);
 
 }
 void Jogo::CarregarJogo(string arquivo){
@@ -65,3 +65,9 @@ void Jogo::CarregarJogo(string arquivo){
 void Jogo::SalvarJogo(){
 
 }
+void Jogo::verificaPeca(int lOrg,int cOrg, int lDest, int cDest){
+    
+    tabuleiro->verPeca(lOrg, cOrg, lDest, cDest);    
+}
+
+

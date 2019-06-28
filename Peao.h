@@ -5,6 +5,7 @@ using namespace std;
 
 class Peao: public Peca {
 private:
+    string id;
     bool ordem;
     bool status; //indica se esta no jogo
     bool cor;
@@ -17,4 +18,8 @@ public:
     bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
     bool getCor();
     void setCor(bool i);
+
+        void setId(char c);
+    string getId();
+    
 };

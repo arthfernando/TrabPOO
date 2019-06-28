@@ -17,7 +17,12 @@ public:
     void imprimeColuna();
     void setStatus(bool b);
     bool getStatus();
+    
     void setPecas(Peca *p);
-    string getPecas();
+    Peca *getPecas();
+
+    string desenhaPos();
+
+    bool checarPosicao(int, int, int, int);
 };
 #endif

@@ -1,7 +1,5 @@
 #include "Tabuleiro.h"
 #include "Posicao.h"
-#include "Peca.h"
-#include "Peao.h"
 #include <iostream>
 
 using namespace std;
@@ -49,23 +47,23 @@ Tabuleiro::Tabuleiro(Peca *peca[32]) {
     }
 
 // inicia pecas pretas nas posicoes iniciais padrao
-    tabuleiro[0][6].setPecas(peca[24]);
-    tabuleiro[1][6].setPecas(peca[25]);
-    tabuleiro[2][6].setPecas(peca[26]);
-    tabuleiro[3][6].setPecas(peca[27]);
-    tabuleiro[4][6].setPecas(peca[28]);
-    tabuleiro[5][6].setPecas(peca[29]);
-    tabuleiro[6][6].setPecas(peca[30]);
-    tabuleiro[7][6].setPecas(peca[31]);
+    tabuleiro[0][6].setPecas(peca[16]);
+    tabuleiro[1][6].setPecas(peca[17]);
+    tabuleiro[2][6].setPecas(peca[18]);
+    tabuleiro[3][6].setPecas(peca[19]);
+    tabuleiro[4][6].setPecas(peca[20]);
+    tabuleiro[5][6].setPecas(peca[21]);
+    tabuleiro[6][6].setPecas(peca[22]);
+    tabuleiro[7][6].setPecas(peca[23]);
 
-    tabuleiro[0][7].setPecas(peca[16]);
-    tabuleiro[1][7].setPecas(peca[17]);
-    tabuleiro[2][7].setPecas(peca[18]);
-    tabuleiro[3][7].setPecas(peca[19]);
-    tabuleiro[4][7].setPecas(peca[20]);
-    tabuleiro[5][7].setPecas(peca[21]);
-    tabuleiro[6][7].setPecas(peca[22]);
-    tabuleiro[7][7].setPecas(peca[23]);
+    tabuleiro[0][7].setPecas(peca[24]);
+    tabuleiro[1][7].setPecas(peca[25]);
+    tabuleiro[2][7].setPecas(peca[26]);
+    tabuleiro[3][7].setPecas(peca[27]);
+    tabuleiro[4][7].setPecas(peca[28]);
+    tabuleiro[5][7].setPecas(peca[29]);
+    tabuleiro[6][7].setPecas(peca[30]);
+    tabuleiro[7][7].setPecas(peca[31]);
 }
 
 void Tabuleiro::imprimeTabuleiro() {
@@ -95,4 +93,26 @@ void Tabuleiro::imprimeTabuleiro() {
         }
         cout << endl;
     }
+}
+
+void Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
+    
+    /* if(tabuleiro[lOrg][cOrg].getPecas() == "p"){
+        if(tabuleiro[lOrg][cOrg].checarPosicao(lOrg, cOrg, lDest, cDest)) {
+           
+            //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
+        }else{
+            cout << "Movimento Invalido" << endl;
+            //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
+        }
+    }*/
+    
+}
+void Tabuleiro::atualizarTabuleiro(int lOrg, int cOrg, int lDest, int cDest){
+  
+    tabuleiro[lOrg][cOrg].setPecas(NULL);
+    // tabuleiro[lDest][cDest].setpegar("p");
+    
+
+
 }

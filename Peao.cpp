@@ -12,10 +12,13 @@ Peao::Peao(bool c, bool o) {
 string Peao::desenha() {
   // imprime maiuscula se branca e minuscula se preta
    if(getCor()){
-      return "P";
+      // return "P";
+      id = "P";
   }else{
-      return "p";
+      // return "p";
+      id = "p";
   }
+  return id;
 }
 
 bool Peao::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
@@ -68,5 +71,17 @@ bool Peao::getCor() {
 
 // atribui cor ao peao
 void Peao::setCor(bool i) {
-    cor = i;
+    // cor = i;
+    if(i == 0) {
+      
+    }
 }
+
+void Peao::setId(char c) {
+    id = c;
+}
+
+string Peao::getId() {
+    return id;
+}
+

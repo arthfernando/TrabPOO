@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-
 Posicao::Posicao(){
     
     //pecas = new Peao();
@@ -10,7 +9,6 @@ Posicao::Posicao(){
 }
 
 void Posicao::setCor(int c){
-
     cor = c;
 }
 
@@ -45,18 +43,36 @@ bool Posicao::getStatus() {
 
 // atribui uma peca a posicao
 void Posicao::setPecas(Peca *p){
-
-   if(p == NULL){
-       cout << "entrou" << endl;
-   } 
    pecas = p;
 }
+
+// void Posicao::setPecas(char c) {
+//     pecas->setId(c);
+// }
+
+
 // retorna peca que esta na posicao
-string Posicao::getPecas(){
+Peca* Posicao::getPecas(){
 
     if(pecas == NULL){
-        return " ";
+        return NULL;
     }else{
-        return pecas->desenha();
+        // return pecas->desenha();
+        return pecas;
     }
 }
+
+string Posicao::desenhaPos() {
+    if(pecas == NULL) {
+        return " ";
+    } else {
+        return pecas->;
+    }
+}
+
+/* */
+bool Posicao::checarPosicao(int lOrg, int cOrg, int lDest, int cDest) {
+    
+    return pecas->checaMovimento(lOrg, cOrg, lDest, cDest);
+}
+

@@ -6,11 +6,10 @@ using std::cin;
 using std::endl;
 
 int main() {
-    Jogador *j;
     Jogo game;
     string nome1;
 	string nome2;
-    bool ordem = true;
+    bool ordem = true, cor;
     string entrada,arquivo;
     int linhaOrg, colOrg, linhaDest, colDest;
     int opcao;
@@ -52,23 +51,21 @@ int main() {
             cin >> linhaOrg >> colOrg;
             cout << "linha e coluna de destino" << endl;
             cin >> linhaDest >> colDest;
+            cor = false;
             ordem = false;
+           // game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
         }else{
             cout << "Jogador 2" << endl;
             cout << "linha e coluna de origem" << endl;
             cin >> linhaOrg >> colOrg;
             cout << "linha e coluna de destino" << endl;
             cin >> linhaDest >> colDest;
+            cor = true;
             ordem = true;
+            //game.verificaPeca(linhaOrg,colOrg);
         }
-
-        //game.verificarPeca();
-        /* Verificar qual peça esta na posicao e ver que cor é o jogador*/
-
     }while(linhaOrg!=9);
 
-	//jogar.inserirNome(nome1,nome2);
-    //jogar.imprimir();
     while(xeque_mate){
         switch(opcao){  
             case 5:

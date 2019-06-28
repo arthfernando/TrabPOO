@@ -13,6 +13,8 @@ public:
     Tabuleiro();
     Tabuleiro(Peca *peca[32]);
     void imprimeTabuleiro();
+    void verPeca(int lOrg, int cOrg, int lDest, int cDest);  
+    void atualizarTabuleiro(int lOrg, int cOrg, int lDest, int cDest);
     
 };
 #endif
