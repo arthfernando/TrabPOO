@@ -1,33 +1,33 @@
 #include <iostream>
 #include "Torre.h"
 
+// Construtor de Torre, recebe dois paramêtros bool (cor e ordem) e passa aos atributos do objeto, junto com status = 1 que indica se a peça está no jogo ou não 
 Torre::Torre(bool c, bool o,bool s){
     cor = c;
     ordem = o;
     status = s;
 }
+
+// Retorna letra maiúscula ou minúscula de acordo com a cor da peça (branca = maiúscula, preta = minúscula)
 string Torre::desenha() {
-  // imprime maiscula se branca (1) e minuscula se preto (0)
   if(getCor()){
       return "T";
   }else{
       return "t";
   }
 }
-bool Torre::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest){
 
-    
-// armazena char como int para verificar na matriz
+// checaMovimento: recebe posição de origem e destino, cria duas variáveis auxiliares que servem para manter a segurança das variáveis originais, e verifica se o movimento da Torre é valido
+bool Torre::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest){
     int lOrg = linhaOrg;
     int lDest = linhaDest;
 
-    if((lDest < 0 || lDest >7) || (colDest < 0 || colDest > 7)){//verifica se esta dentro do tabuleiro    
+    if((lDest < 0 || lDest >7) || (colDest < 0 || colDest > 7)){
         return false;
     }else{ 
-        if(lOrg == lDest && colOrg == colDest){ //verifica se e possivel mover
+        if(lOrg == lDest && colOrg == colDest){
             return false;
         }else{
-            /*Verificacao de movimento*/
             if(lOrg == lDest ){
                 moveu = 1;
                 return true;
@@ -41,12 +41,13 @@ bool Torre::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest)
     }
 
 }
-// retorna cor do bispo
+
+// getCor retorna cor do bispo
 bool Torre::getCor() {
     return cor;
 }
 
-// atribui cor ao bispo
+// setCor atribui cor ao bispo
 void Torre::setCor(bool i) {
     cor = i;
 }

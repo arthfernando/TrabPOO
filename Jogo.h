@@ -10,8 +10,8 @@ private:
 public:
     Jogo();
     void inserirNome(std::string jogador1,std::string jogador2);
-    void CarregarJogo(string arquivo);
-    void SalvarJogo();
+    void carregarJogo(string arquivo);
+    void salvarJogo();
     void imprimirTabuleiro();
     void imprimirTabuleiroAtualizado();
     void verificaPeca(int lOrg, int cOrg, int lDest, int cDest);

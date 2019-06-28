@@ -5,6 +5,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
+// Construtor padrão de Jogador, seta nome e ordem como 0
 Jogador::Jogador() {
     nome = "";
     ordem = 0;
@@ -18,10 +19,14 @@ Jogador::Jogador() {
     ordem = ordem;
    
 }*/
+
+// setPlayer recebe o nome do jogador e a ordem dele (se é brancas ou pretas)
 void Jogador::setPlayer(string nome1, int ord){
     nome = nome1;
     ordem = ord;
 }
+
+// imprimir imprime o nome do Jogador
 void Jogador::imprimir(){
     cout << "Nome impresso: " << nome << endl;
 }

@@ -2,46 +2,33 @@
 #include <iostream>
 using namespace std;
 
+// Construtor padrão de Posicao, inicia os atributos como 0 e NULL, indicando que estão vazios
 Posicao::Posicao(){
-    
     ocupado = 0;
     pecas = NULL;
 }
 
+// setCor atribui cor a Posicao
 void Posicao::setCor(int c){
     cor = c;
 }
 
-// retorna cor da posicao
+// getCor retorna cor da posicao
 int Posicao::getCor() {
     return cor;
 }
 
-// imprime numeros das colunas do --tabuleiro
-void Posicao::imprimeColuna() {
-    for(int i = 0; i < 8; i++) {
-        cout << " " << i+1;
-    }
-}
-
-// imprime letras das linhas do --tabuleiro
-void Posicao::imprimeLinha(int i) {
-    char a = 'a';
-    char b = a + i;
-    cout << b;
-}
-
-// atribui status a posicao (ocupada ou nao)
+// setOcupado atribui status a posicao (ocupada ou nao)
 void Posicao::setOcupado(bool b) {
     ocupado = b;
 }
 
-// retorna se esta ocupada ou nao
+// getOcupado retorna se esta ocupada ou nao
 bool Posicao::getOcupado() {
     return ocupado;
 }
 
-// atribui uma peca a posicao
+// setPecas atribui uma peca a posicao
 void Posicao::setPecas(Peca *p, char s){
     if(p) {
         setOcupado(1);
@@ -53,7 +40,7 @@ void Posicao::setPecas(Peca *p, char s){
     }
 }
 
-// retorna peca que esta na posicao
+// getPecas retorna peca que esta na posicao
 Peca* Posicao::getPecas(){
 
     if(pecas == NULL){
@@ -63,6 +50,7 @@ Peca* Posicao::getPecas(){
     }
 }
 
+// desenha a peca que está na Posicao
 char Posicao::desenhaPos() {
     if(pecas == NULL) {
         return '\0';

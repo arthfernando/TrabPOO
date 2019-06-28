@@ -15,6 +15,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+// Construtor padrão do Jogo, aloca os dois Jogadores e as Pecas do jogo
 Jogo::Jogo(){
     cout << endl;
     for(int i = 0; i < 2; i++) {
@@ -50,26 +51,35 @@ Jogo::Jogo(){
     tabuleiro = new Tabuleiro(pecas);  
 }
 
+// imprimirTabuleiro imprime o tabuleiro no Jogo
 void Jogo::imprimirTabuleiro() {
     tabuleiro->imprimeTabuleiro();
 }
 
+// imprimirTabuleiroAtualizado mostra o tabuleiro atualizado
 void Jogo::imprimirTabuleiroAtualizado() {
     //tabuleiro->imprimeTabuleiroAtualizado();
 }
+
+// inserirNome recebe duas strings (nome do jogadores) e atribui a cada Jogador
 void Jogo::inserirNome(string jogador1, string jogador2){
     player[0]->setPlayer(jogador1,0);
     player[1]->setPlayer(jogador2,1);
 
 }
-void Jogo::CarregarJogo(string arquivo){
+
+// carregarJogo recupera informações do arquivo e inicia o Jogo com elas
+void Jogo::carregarJogo(string arquivo){
 
 }
-void Jogo::SalvarJogo(){
+
+// salvarJogo passa as informações do estado do Jogo para um arquivo
+void Jogo::salvarJogo(){
 
 }
+
+// verificaPeca recebe posicao de origem e destino e faz a verificacao da peca que quer se mover
 void Jogo::verificaPeca(int lOrg,int cOrg, int lDest, int cDest){
-    
     tabuleiro->verPeca(lOrg, cOrg, lDest, cDest);    
 }
 

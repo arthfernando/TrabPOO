@@ -89,13 +89,13 @@ void Tabuleiro::imprimeTabuleiro() {
             
             if(tabuleiro[i][j].getCor() == 0) {
                 if(tabuleiro[i][j].getOcupado()) {
-                  cout << "\033[1;31;47m" << tabuleiro[i][j].desenhaPos() << "  " << "\033[m"; //branco           
+                  cout << "\033[1;31;47m" << tabuleiro[i][j].desenhaPos() << " " << "\033[m"; //branco           
                 } else {
                    cout << "\033[1;31;47m" << tabuleiro[i][j].desenhaPos() << "  " << "\033[m"; //branco
                 }
             } else {
                 if(tabuleiro[i][j].getOcupado()) {
-                   cout << "\033[1;31;40m" << tabuleiro[i][j].desenhaPos() << "  " << "\033[m"; //preto    
+                   cout << "\033[1;31;40m" << tabuleiro[i][j].desenhaPos() << " " << "\033[m"; //preto    
                 } else {
                   cout << "\033[1;31;40m" << tabuleiro[i][j].desenhaPos() << "  " << "\033[m"; //preto
                 }
