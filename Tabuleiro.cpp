@@ -39,11 +39,11 @@ Tabuleiro::Tabuleiro(Peca *peca[32]) {
     tabuleiro[7][1].setPecas(peca[7], "P");
 
 // mostra posicoes vazias
-    //  for(int i = 0; i < 8;i++){
-    //     for(int j = 2; j < 6; j++){
-    //         tabuleiro[i][j].setPecas(NULL, "");
-    //     }
-    // }
+     for(int i = 0; i < 8;i++){
+        for(int j = 2; j < 6; j++){
+            tabuleiro[i][j].setPecas(NULL, "");
+        }
+    }
 
 // inicia pecas pretas nas posicoes iniciais padrao
     tabuleiro[0][6].setPecas(peca[16], "p");

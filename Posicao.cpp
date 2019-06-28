@@ -43,8 +43,12 @@ bool Posicao::getStatus() {
 
 // atribui uma peca a posicao
 void Posicao::setPecas(Peca *p, string s){
-   pecas = p;
-   pecas->setId(s);
+    if(p) {
+        pecas = p;
+        pecas->setId(s);
+    } else {
+        pecas = p;
+    }
 }
 
 // void Posicao::setPecas(char c) {
