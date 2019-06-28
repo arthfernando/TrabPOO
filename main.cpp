@@ -53,7 +53,7 @@ int main() {
             cin >> linhaDest >> colDest;
             cor = false;
             ordem = false;
-           // game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
+           game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
         }else{
             cout << "Jogador 2" << endl;
             cout << "linha e coluna de origem" << endl;

@@ -95,22 +95,23 @@ void Tabuleiro::imprimeTabuleiro() {
 }
 
 void Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
-    
-    /* if(tabuleiro[lOrg][cOrg].getPecas() == "p"){
+    Peca *aux = tabuleiro[lOrg][cOrg].getPecas();
+    if(aux->getId() == "p"){
         if(tabuleiro[lOrg][cOrg].checarPosicao(lOrg, cOrg, lDest, cDest)) {
-           
+           cout << "ENTROU NO verPeca" << endl;
             //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
         }else{
             cout << "Movimento Invalido" << endl;
             //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
         }
-    }*/
+    }
     
 }
 void Tabuleiro::atualizarTabuleiro(int lOrg, int cOrg, int lDest, int cDest){
-  
+    Peca *aux;
     // tabuleiro[lOrg][cOrg].setPecas(NULL);
-    // tabuleiro[lDest][cDest].setpegar("p");
+    aux = tabuleiro[lDest][cDest].getPecas();
+    tabuleiro[lDest][cDest].setPecas(aux, aux->getId());
     
 
 
