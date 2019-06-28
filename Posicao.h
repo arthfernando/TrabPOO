@@ -18,10 +18,10 @@ public:
     void setOcupado(bool b);
     bool getOcupado();
     
-    void setPecas(Peca *p, string s);
+    void setPecas(Peca *p, char s);
     Peca *getPecas();
 
-    string desenhaPos();
+    char desenhaPos();
 
 };
 #endif

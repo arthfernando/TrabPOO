@@ -5,13 +5,13 @@
 using std::string;
 class Peca {
 private:
-    string id;
+    char id;
     bool status; //indica se esta no jogo
     bool cor;
     bool moveu; //indica se moveu
 public:
     Peca();
-    Peca(string, bool, bool, bool);
+    Peca(char, bool, bool, bool);
     void setCor(bool);
     bool getCor();
     bool getStatus();
@@ -20,8 +20,8 @@ public:
     void setStatus(bool status);
     void setMov();
 
-    string getId();
-    void setId(string s);
+    char getId();
+    void setId(char s);
 
     virtual string desenha() = 0;
     virtual bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) = 0;

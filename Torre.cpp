@@ -2,7 +2,6 @@
 #include "Torre.h"
 
 Torre::Torre(bool c, bool o,bool s){
-    /*ocupada*/
     cor = c;
     ordem = o;
     status = s;
@@ -17,6 +16,7 @@ string Torre::desenha() {
 }
 bool Torre::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest){
 
+    
 // armazena char como int para verificar na matriz
     int lOrg = linhaOrg;
     int lDest = linhaDest;

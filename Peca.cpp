@@ -3,13 +3,13 @@
 using namespace std;
 
 Peca::Peca() {
-    id = "";
+    id = '\0';
     cor = 0;
     status = 0;
     moveu = 0;
 }
 
-Peca::Peca(string _id, bool c, bool s, bool m) {
+Peca::Peca(char _id, bool c, bool s, bool m) {
     id = _id;
     cor = c;
     status = s;
@@ -27,11 +27,11 @@ void Peca::setCor(bool c){
     cor = c;
 }
 
-string Peca::getId() {
+char Peca::getId() {
     return id;
 }
 
-void Peca::setId(string s) {
+void Peca::setId(char s) {
     id = s;
 }
 
