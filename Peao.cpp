@@ -3,10 +3,15 @@
 
 using namespace std;
 
-Peao::Peao(bool c, bool o) {
+Peao::Peao(){
+  status = 0;
+}
+
+Peao::Peao(bool c, bool o,bool s) {
   // indica que esta no tabuleiro
   cor = c;
   ordem = o;
+  status = s;
 }
 
 string Peao::desenha() {
@@ -21,9 +26,9 @@ string Peao::desenha() {
   return id;
 }
 
-bool Peao::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
-  int lOrg = linhaOrg - 97;
-  int lDest = linhaDest - 97;
+bool Peao::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
+  int lOrg = linhaOrg;
+  int lDest = linhaDest;
   if(lDest >= 0 && colDest <= 7){ //verifica se esta dentro do tabuleiro --tabuleiro
     if((lDest == lOrg) && (colDest != colOrg)) {  //verifica posicao de movimento
       if((moveu==0)){
@@ -71,10 +76,7 @@ bool Peao::getCor() {
 
 // atribui cor ao peao
 void Peao::setCor(bool i) {
-    // cor = i;
-    if(i == 0) {
-      
-    }
+    cor = i;
 }
 
 void Peao::setId(char c) {
@@ -83,5 +85,13 @@ void Peao::setId(char c) {
 
 string Peao::getId() {
     return id;
+}
+
+void Peao::setStatus(bool s) {
+    status = s;
+}
+
+bool Peao::getStatus() {
+    return status;
 }
 

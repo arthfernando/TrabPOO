@@ -1,10 +1,11 @@
 #include <iostream>
 #include "Torre.h"
 
-Torre::Torre(bool c, bool o){
+Torre::Torre(bool c, bool o,bool s){
     /*ocupada*/
     cor = c;
     ordem = o;
+    status = s;
 }
 string Torre::desenha() {
   // imprime maiscula se branca (1) e minuscula se preto (0)
@@ -14,11 +15,11 @@ string Torre::desenha() {
       return "t";
   }
 }
-bool Torre::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest){
+bool Torre::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest){
 
 // armazena char como int para verificar na matriz
-    int lOrg = linhaOrg - 97;
-    int lDest = linhaDest - 97;
+    int lOrg = linhaOrg;
+    int lDest = linhaDest;
 
     if((lDest < 0 || lDest >7) || (colDest < 0 || colDest > 7)){//verifica se esta dentro do tabuleiro    
         return false;

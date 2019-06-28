@@ -35,10 +35,10 @@ void Peca::setId(string s) {
     id = s;
 }
 
-// setPegar() {
+void Peca::setStatus(bool s){
+    status = s;
+}
+bool Peca::getStatus(){
 
-// }
-
-// getPegar() {
-
-// }
+    return status;
+}

@@ -12,7 +12,7 @@ private:
 public:
     Bispo(bool cor, bool ordem);
     string desenha();
-    bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
+    bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
     bool getCor();
     void setCor(bool i);
 };

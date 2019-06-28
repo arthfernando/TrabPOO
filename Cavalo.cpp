@@ -5,6 +5,7 @@ Cavalo::Cavalo(bool c, bool o){
     /*ocupada*/
     ordem = o;
     cor = c;
+    status = 1;
 }
 
 string Cavalo::desenha() {
@@ -25,10 +26,10 @@ int Cavalo::modulo(int x){
     }
 }
 
-bool Cavalo::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest){
+bool Cavalo::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest){
     // armazena char como int para identificar posicao na matriz
-    int lOrg = linhaOrg - 97;
-    int lDest = linhaDest - 97;
+    int lOrg = linhaOrg;
+    int lDest = linhaDest;
 
     if((lDest < 0 || lDest >7) || (colDest < 0 || colDest > 7)){ //verifica se esta dentro do tabuleiro    
         return false;

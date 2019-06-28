@@ -10,9 +10,9 @@ private:
     bool moveu;
     bool cor;
 public:
-    Torre(bool cor, bool ordem);
+    Torre(bool cor, bool ordem,bool status);
     string desenha();
-    bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest);
+    bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
     bool getCor();
     void setCor(bool);
 };

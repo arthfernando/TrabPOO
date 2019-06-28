@@ -2,16 +2,21 @@
 #include "Posicao.h"
 #include <iostream>
 
+
+/* 1 - Branca 0 - Preta*/
 using namespace std;
 
 
 Tabuleiro::Tabuleiro(){
-
+    for(int i=0;i < 8;i++){
+        for(int j=0; j < 8;j++){
+            tabuleiro[i][j].setPecas(NULL,"");
+        }
+    } 
 }
 
 Tabuleiro::Tabuleiro(Peca *peca[32]) {
-
-           
+  
     // indica cor das casas do tabuleiro
     for(int i = 0; i < 8; i++) {
         for(int j = 0; j < 8; j++) {
@@ -74,12 +79,6 @@ void Tabuleiro::imprimeTabuleiro() {
     }
 
     cout << endl;
-    // bloco que imprime as casas e as pecas
-    // for(int i = 0; i < 8; i++) {
-    //     cout << i << " ";
-    // }
-
-
     for(int i = 0; i < 8; i++) {
         if (i >= 0) {
             cout << i;
@@ -89,13 +88,13 @@ void Tabuleiro::imprimeTabuleiro() {
         for(int j = 0; j < 8; j++) {
             
             if(tabuleiro[i][j].getCor() == 0) {
-                if(tabuleiro[i][j].getStatus()) {
+                if(tabuleiro[i][j].getOcupado()) {
                   cout << "\033[1;31;47m" << tabuleiro[i][j].desenhaPos() << " " << "\033[m"; //branco           
                 } else {
                    cout << "\033[1;31;47m" << tabuleiro[i][j].desenhaPos() << " " << "\033[m"; //branco
                 }
             } else {
-                if(tabuleiro[i][j].getStatus()) {
+                if(tabuleiro[i][j].getOcupado()) {
                    cout << "\033[1;31;40m" << tabuleiro[i][j].desenhaPos() << " " << "\033[m"; //preto    
                 } else {
                   cout << "\033[1;31;40m" << tabuleiro[i][j].desenhaPos() << " " << "\033[m"; //preto
@@ -107,22 +106,121 @@ void Tabuleiro::imprimeTabuleiro() {
 }
 
 void Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
-    Peca *aux = tabuleiro[lOrg][cOrg].getPecas();
-    cout << "entrou no verPeca" << endl;
-    if(aux->getId() == "P"){
-        if(tabuleiro[lOrg][cOrg].checarPosicao(lOrg, cOrg, lDest, cDest)) {
-           cout << "ENTROU NO verPeca PEAO" << endl;
-            atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
-        }else{
-            cout << "Movimento Invalido" << endl;
-            //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
+    Peca *org = tabuleiro[lOrg][cOrg].getPecas();
+
+    /* Brancas */
+    if(org->getId() == "P"){
+        if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }else if(org->getId() == "T"){
+        if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+        
+    }
+    else if(org->getId() == "C"){
+        if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "B"){
+        if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "K"){
+        if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "Q"){
+        if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
         }
     }
     
+    /*Pretas */
+    if(org->getId() == "p"){
+        if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }else if(org->getId() == "t"){
+        if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "c"){
+        if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "b"){
+        if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "k"){
+        if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
+    else if(org->getId() == "q"){
+        if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
+            cout << "Movimento invalido" << endl;
+        }
+    }
 }
 void Tabuleiro::atualizarTabuleiro(int lOrg, int cOrg, int lDest, int cDest){
-    Peca *aux;
+    
+    Peca *org = tabuleiro[lOrg][cOrg].getPecas();
+
     tabuleiro[lOrg][cOrg].setPecas(NULL, "");
-    aux = tabuleiro[lDest][cDest].getPecas();
-    tabuleiro[lDest][cDest].setPecas(aux, aux->getId());
+    tabuleiro[lOrg][cOrg].setOcupado(0);
+    tabuleiro[lDest][cDest].setPecas(org,org->getId());
+    tabuleiro[lDest][cDest].setOcupado(1);  
+}
+void Tabuleiro::atualizarTabuleiroComido(int lOrg, int cOrg, int lDest, int cDest){
+    
+    Peca *org = tabuleiro[lOrg][cOrg].getPecas();
+    tabuleiro[lOrg][cOrg].setPecas(NULL, "");
+    tabuleiro[lOrg][cOrg].setOcupado(0);
+    /*foi comida */
+    org->setStatus(1);
+    tabuleiro[lDest][cDest].setPecas(org,org->getId());
+    tabuleiro[lDest][cDest].setOcupado(1);  
+}
+bool Tabuleiro::checagemMovimentoBrancas(Peca *org,int lOrg,int cOrg,int lDest,int cDest){
+
+    if(org->checaMovimento(lOrg, cOrg, lDest, cDest)) {
+        /* Comer uma peca*/
+        if(tabuleiro[lDest][cDest].getOcupado() == 1 && tabuleiro[lDest][cDest].getCor() == 0){
+            atualizarTabuleiroComido(lOrg, cOrg, lDest, cDest);
+            //cout << "comeu" << endl;
+        /*Sua peca */    
+        }else if(tabuleiro[lDest][cDest].getOcupado() == 1 && tabuleiro[lDest][cDest].getCor() == 1){
+            return false;
+        }else if(tabuleiro[lDest][cDest].getOcupado() == 0){//mover uma peca posicao vazia
+            atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
+        }
+    }else{
+        return false;
+    }
+}
+bool Tabuleiro::checagemMovimentoPretas(Peca *org,int lOrg,int cOrg,int lDest,int cDest){
+
+    if(org->checaMovimento(lOrg, cOrg, lDest, cDest)) {
+        /* Comer uma peca*/
+        if(tabuleiro[lDest][cDest].getOcupado() == 1 && tabuleiro[lDest][cDest].getCor() == 1){
+            atualizarTabuleiroComido(lOrg, cOrg, lDest, cDest);
+            //cout << "comeu" << endl;
+        /*Sua peca */    
+        }else if(tabuleiro[lDest][cDest].getOcupado() == 1 && tabuleiro[lDest][cDest].getCor() == 0){
+            return false;
+        }else if(tabuleiro[lDest][cDest].getOcupado() == 0){//mover uma peca posicao vazia
+            atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
+        }
+    }else{
+        return false;
+    }
 }

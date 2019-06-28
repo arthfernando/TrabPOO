@@ -7,6 +7,7 @@ Rei::Rei(bool c, bool o) {
   // indica que esta no tabuleiro
   cor = c;
   ordem = o;
+  status = 1;
 }
 
 string Rei::desenha() {
@@ -17,10 +18,10 @@ string Rei::desenha() {
   }
 }
 
-bool Rei::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
+bool Rei::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
     // armazena char como int
-    int lOrg = linhaOrg - 97;
-    int lDest = linhaDest - 97;
+    int lOrg = linhaOrg;
+    int lDest = linhaDest;
 
 
     if((lDest >= 0 && lDest <= 7) && (colDest >= 0 && colDest <= 7)){ //verifica se esta dentro do tabuleiro

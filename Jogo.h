@@ -13,5 +13,6 @@ public:
     void CarregarJogo(string arquivo);
     void SalvarJogo();
     void imprimirTabuleiro();
+    void imprimirTabuleiroAtualizado();
     void verificaPeca(int lOrg, int cOrg, int lDest, int cDest);
 };

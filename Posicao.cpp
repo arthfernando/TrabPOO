@@ -4,8 +4,8 @@ using namespace std;
 
 Posicao::Posicao(){
     
-    //pecas = new Peao();
-
+    ocupado = 0;
+    pecas = NULL;
 }
 
 void Posicao::setCor(int c){
@@ -32,29 +32,26 @@ void Posicao::imprimeLinha(int i) {
 }
 
 // atribui status a posicao (ocupada ou nao)
-void Posicao::setStatus(bool b) {
-    status = b;
+void Posicao::setOcupado(bool b) {
+    ocupado = b;
 }
 
 // retorna se esta ocupada ou nao
-bool Posicao::getStatus() {
-    return status;
+bool Posicao::getOcupado() {
+    return ocupado;
 }
 
 // atribui uma peca a posicao
 void Posicao::setPecas(Peca *p, string s){
     if(p) {
+        setOcupado(1);
         pecas = p;
         pecas->setId(s);
     } else {
+        setOcupado(0);
         pecas = p;
     }
 }
-
-// void Posicao::setPecas(char c) {
-//     pecas->setId(c);
-// }
-
 
 // retorna peca que esta na posicao
 Peca* Posicao::getPecas(){
@@ -62,7 +59,6 @@ Peca* Posicao::getPecas(){
     if(pecas == NULL){
         return NULL;
     }else{
-        // return pecas->desenha();
         return pecas;
     }
 }
@@ -75,9 +71,4 @@ string Posicao::desenhaPos() {
     }
 }
 
-/* */
-bool Posicao::checarPosicao(int lOrg, int cOrg, int lDest, int cDest) {
-    
-    return pecas->checaMovimento(lOrg, cOrg, lDest, cDest);
-}
 

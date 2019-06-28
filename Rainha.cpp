@@ -7,6 +7,7 @@ Rainha::Rainha(bool c, bool o) {
   // indica que esta no tabuleiro
   cor = c;
   ordem = o;
+  status = 1;
 }
 
 string Rainha::desenha() {
@@ -18,10 +19,10 @@ string Rainha::desenha() {
   }
 }
 
-bool Rainha::checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) {
+bool Rainha::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
     // armazena char como int para verificar no tabuleiro
-    int lOrg = linhaOrg - 97;
-    int lDest = linhaDest - 97;
+    int lOrg = linhaOrg;
+    int lDest = linhaDest;
 
     if((lDest >= 0 && lDest <= 7) && (colDest >= 0 && colDest <= 7)) { //verifica se esta nos limites do tabuleiro
         if((lDest != lOrg) || (colDest != colOrg)) { //verifica se é possivel mover

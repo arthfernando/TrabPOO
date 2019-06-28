@@ -54,6 +54,7 @@ int main() {
             cor = false;
             ordem = false;
            game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
+           game.imprimirTabuleiro();
         }else{
             cout << "Jogador 2" << endl;
             cout << "linha e coluna de origem" << endl;
@@ -62,6 +63,8 @@ int main() {
             cin >> linhaDest >> colDest;
             cor = true;
             ordem = true;
+            game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
+            game.imprimirTabuleiro();
             //game.verificaPeca(linhaOrg,colOrg);
         }
     }while(linhaOrg!=9);

@@ -15,6 +15,9 @@ public:
     void imprimeTabuleiro();
     void verPeca(int lOrg, int cOrg, int lDest, int cDest);  
     void atualizarTabuleiro(int lOrg, int cOrg, int lDest, int cDest);
+    void atualizarTabuleiroComido(int lOrg, int cOrg, int lDest, int cDest);
+    bool checagemMovimentoBrancas(Peca *org,int lOrg,int cOrg,int lDest,int cDest);
+    bool checagemMovimentoPretas(Peca *org,int lOrg,int cOrg,int lDest,int cDest);
     
 };
 #endif

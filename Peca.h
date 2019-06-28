@@ -14,15 +14,16 @@ public:
     Peca(string, bool, bool, bool);
     void setCor(bool);
     bool getCor();
+    bool getStatus();
 
     void setPeca(bool cor, bool status, bool moveu);
-    void setStatus();
+    void setStatus(bool status);
     void setMov();
 
     string getId();
     void setId(string s);
 
     virtual string desenha() = 0;
-    virtual bool checaMovimento(char linhaOrg, int colOrg, char linhaDest, int colDest) = 0;
+    virtual bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) = 0;
 };
 #endif

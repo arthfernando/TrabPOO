@@ -7,7 +7,7 @@ class Posicao {
 private:
 
     bool cor; //indica cor da posicao (branca ou preta)
-    bool status; //indica se esta ocupada ou nao
+    bool ocupado; //indica se esta ocupada ou nao
     Peca *pecas; // indica qual peca esta na posicao --colocar linha e coluna
 public:
     Posicao();
@@ -15,14 +15,13 @@ public:
     int getCor();
     void imprimeLinha(int i);
     void imprimeColuna();
-    void setStatus(bool b);
-    bool getStatus();
+    void setOcupado(bool b);
+    bool getOcupado();
     
     void setPecas(Peca *p, string s);
     Peca *getPecas();
 
     string desenhaPos();
 
-    bool checarPosicao(int, int, int, int);
 };
 #endif
