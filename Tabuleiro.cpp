@@ -10,6 +10,7 @@ Tabuleiro::Tabuleiro(){
 }
 
 Tabuleiro::Tabuleiro(Peca *peca[32]) {
+
            
     // indica cor das casas do tabuleiro
     for(int i = 0; i < 8; i++) {
@@ -67,10 +68,21 @@ Tabuleiro::Tabuleiro(Peca *peca[32]) {
 
 void Tabuleiro::imprimeTabuleiro() {
     // imprime os indices da coluna do tabuleiro
+
+    for(int i = 0; i < 8; i++) {
+        cout << " " << i;
+    }
+
     cout << endl;
     // bloco que imprime as casas e as pecas
+    // for(int i = 0; i < 8; i++) {
+    //     cout << i << " ";
+    // }
+
+
     for(int i = 0; i < 8; i++) {
         if (i >= 0) {
+            cout << i;
         } else {
             cout << " ";
         }
@@ -96,10 +108,11 @@ void Tabuleiro::imprimeTabuleiro() {
 
 void Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
     Peca *aux = tabuleiro[lOrg][cOrg].getPecas();
-    if(aux->getId() == "p"){
+    cout << "entrou no verPeca" << endl;
+    if(aux->getId() == "P"){
         if(tabuleiro[lOrg][cOrg].checarPosicao(lOrg, cOrg, lDest, cDest)) {
-           cout << "ENTROU NO verPeca" << endl;
-            //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
+           cout << "ENTROU NO verPeca PEAO" << endl;
+            atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
         }else{
             cout << "Movimento Invalido" << endl;
             //atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
@@ -109,10 +122,7 @@ void Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
 }
 void Tabuleiro::atualizarTabuleiro(int lOrg, int cOrg, int lDest, int cDest){
     Peca *aux;
-    // tabuleiro[lOrg][cOrg].setPecas(NULL);
+    tabuleiro[lOrg][cOrg].setPecas(NULL, "");
     aux = tabuleiro[lDest][cDest].getPecas();
     tabuleiro[lDest][cDest].setPecas(aux, aux->getId());
-    
-
-
 }
