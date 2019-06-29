@@ -4,17 +4,22 @@
 
 // Construtor de Cavalo, recebe dois paramêtros bool (cor e ordem) e passa aos atributos do objeto, junto com status = 1 que indica se a peça está no jogo ou não 
 Cavalo::Cavalo(bool c, bool o){
-    ordem = o;
     cor = c;
+    ordem = o;
     status = 1;
+    if(cor == 1){
+      id = 'C';
+    }else{
+      id = 'c';
+    } 
 }
 
 // Retorna letra maiúscula ou minúscula de acordo com a cor da peça (branca = maiúscula, preta = minúscula)
-string Cavalo::desenha() {
-   if(getCor()){
-      return "C";
-  }else{
-      return "c";
+char Cavalo::desenha() {
+   if(cor){
+        return id;
+    }else{
+        return id;
   }
 }
 
@@ -40,15 +45,12 @@ bool Cavalo::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest
             return false;
         }else{
             if(modulo(lOrg - lDest) == 1 && modulo(colOrg - colDest) == 2){
-                moveu = 1;
                 return true;
             }
             else if(modulo(lOrg - lDest) == 2 && modulo(colOrg - colDest) == 2){
-                moveu = 1;
                 return true;
             }
             else if(modulo(lOrg - lDest) == 2 && modulo(colOrg - colDest) == 1){
-                moveu = 1;
                 return true;
             }
         }
@@ -57,12 +59,3 @@ bool Cavalo::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest
 
 }
 
-//getCor retorna cor do cavalo
-bool Cavalo::getCor() {
-    return cor;
-}
-
-// setCor atribui cor ao cavalo
-void Cavalo::setCor(bool b) {
-    cor = b;
-}

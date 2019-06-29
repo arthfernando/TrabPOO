@@ -25,11 +25,6 @@ void Peca::setPeca(bool c, bool s, bool m){
     moveu = m;
 }
 
-// setCor recebe cor e passa para o objeto
-void Peca::setCor(bool c){
-    cor = c;
-}
-
 // getId retorna o id do objeto
 char Peca::getId() {
     return id;
@@ -48,4 +43,19 @@ void Peca::setStatus(bool s){
 // getStatus retorna status do objeto
 bool Peca::getStatus(){
     return status;
+}
+
+void Peca::setCor(bool c){
+    cor = c;
+}
+
+bool Peca::getCor(){
+    return cor;
+}
+void Peca::setOrdem(bool o){
+    ordem = o;
+}
+
+bool Peca::getOrdem(){
+    return ordem;
 }

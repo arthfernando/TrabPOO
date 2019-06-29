@@ -5,13 +5,9 @@ using namespace std;
 
 class Rei: public Peca {
 private:
-    bool ordem;
-    bool status; //indica se esta no jogo
-    bool cor;
 public:
     Rei(bool cor, bool ordem);
-    string desenha();
+    char desenha();
     bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
-    bool getCor();
-    void setCor(bool i);
+    
 };

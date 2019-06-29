@@ -2,18 +2,24 @@
 #include "Torre.h"
 
 // Construtor de Torre, recebe dois paramêtros bool (cor e ordem) e passa aos atributos do objeto, junto com status = 1 que indica se a peça está no jogo ou não 
-Torre::Torre(bool c, bool o,bool s){
-    cor = c;
-    ordem = o;
-    status = s;
+Torre::Torre(bool c, bool o){
+  cor = c;
+  ordem = o;
+  status = 1;
+  if(cor == 1){
+      id = 'T';
+  }else{
+      id = 't';
+  }
+    
 }
 
 // Retorna letra maiúscula ou minúscula de acordo com a cor da peça (branca = maiúscula, preta = minúscula)
-string Torre::desenha() {
-  if(getCor()){
-      return "T";
-  }else{
-      return "t";
+char Torre::desenha() {
+  if(cor){
+        return id;
+    }else{
+        return id;
   }
 }
 
@@ -42,12 +48,3 @@ bool Torre::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest)
 
 }
 
-// getCor retorna cor do bispo
-bool Torre::getCor() {
-    return cor;
-}
-
-// setCor atribui cor ao bispo
-void Torre::setCor(bool i) {
-    cor = i;
-}

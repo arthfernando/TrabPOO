@@ -5,18 +5,23 @@ using namespace std;
 
 // Construtor de Rei, recebe dois paramêtros bool (cor e ordem) e passa aos atributos do objeto, junto com status = 1 que indica se a peça está no jogo ou não 
 Rei::Rei(bool c, bool o) {
-  cor = c;
-  ordem = o;
-  status = 1;
+    cor = c;
+    ordem = o;
+    status = 1;
+    if(cor == 1){
+      id = 'K';
+    }else{
+      id = 'k';
+    } 
 }
 
 // Retorna letra maiúscula ou minúscula de acordo com a cor da peça (branca = maiúscula, preta = minúscula)
-string Rei::desenha() {
-     if(getCor()){
-      return "K";
-  }else{
-      return "k";
-  }
+char Rei::desenha() {
+     if(cor){
+        return id;
+    }else{
+        return id;
+    }
 }
 
 // checaMovimento: recebe posição de origem e destino, cria duas variáveis auxiliares que servem para manter a segurança das variáveis originais, e verifica se o movimento de Rei é valido
@@ -45,14 +50,4 @@ bool Rei::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest) {
     } else {
         return false;
     }
-}
-
-// getCor retorna cor do rei
-bool Rei::getCor() {
-    return cor;
-}
-
-// setCor atribui cor ao rei
-void Rei::setCor(bool i) {
-    cor = i;
 }

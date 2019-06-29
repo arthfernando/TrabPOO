@@ -11,16 +11,17 @@ private:
     Peca *pecas; // indica qual peca esta na posicao --colocar linha e coluna
 public:
     Posicao();
-    void setCor(int c);
-    int getCor();
+    void setCorPosicao(int c);
+    int getCorPosicao();
+
     void imprimeLinha(int i);
     void imprimeColuna();
+    
     void setOcupado(bool b);
     bool getOcupado();
     
-    void setPecas(Peca *p, char s);
+    void setPecas(Peca *p);
     Peca *getPecas();
-
     char desenhaPos();
 
 };

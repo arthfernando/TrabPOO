@@ -5,14 +5,10 @@ using namespace std;
 
 class Torre: public Peca {
 private:
-    bool ordem;
-    bool status;
     bool moveu;
-    bool cor;
 public:
-    Torre(bool cor, bool ordem,bool status);
-    string desenha();
+    Torre(bool cor, bool ordem);
+    char desenha();
     bool checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest);
-    bool getCor();
-    void setCor(bool);
+
 };

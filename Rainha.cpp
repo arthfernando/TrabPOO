@@ -3,21 +3,26 @@
 
 using namespace std;
 
-
 // Construtor de Rainha, recebe dois paramêtros bool (cor e ordem) e passa aos atributos do objeto, junto com status = 1 que indica se a peça está no jogo ou não 
-Rainha::Rainha(bool c, bool o) {
+Rainha::Rainha(bool c, bool o) {   
+
   cor = c;
   ordem = o;
   status = 1;
+  if(cor == 1){
+      id = 'Q';
+  }else{
+      id = 'q';
+  }  
 }
 
 // Retorna letra maiúscula ou minúscula de acordo com a cor da peça (branca = maiúscula, preta = minúscula)
-string Rainha::desenha() {
-     if(getCor()){
-      return "Q";
-  }else{
-      return "q";
-  }
+char Rainha::desenha() {
+    if(cor){
+        return id;
+    }else{
+        return id;
+    }
 }
 
 // checaMovimento: recebe posição de origem e destino, cria duas variáveis auxiliares que servem para manter a segurança das variáveis originais, e verifica se o movimento da Rainha é valido
@@ -45,14 +50,4 @@ bool Rainha::checaMovimento(int linhaOrg, int colOrg, int linhaDest, int colDest
     } else {
         return false;
     }
-}
-
-// getCor retorna cor da rainha
-bool Rainha::getCor() {
-    return cor;
-}
-
-// setCor atribui cor a rainha
-void Rainha::setCor(bool i) {
-    cor = i;
 }

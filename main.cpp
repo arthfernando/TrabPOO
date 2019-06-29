@@ -13,6 +13,7 @@ int main() {
     string entrada,arquivo;
     int linhaOrg, colOrg, linhaDest, colDest;
     int opcao;
+    bool jogardnv;
     bool novojogo = true;
     bool xeque_mate = true;
 
@@ -46,15 +47,17 @@ int main() {
 
     do{
         if(ordem){
-            cout << "Jogador 1" << endl;
-            cout << "linha e coluna de origem" << endl;
-            cin >> linhaOrg >> colOrg;
-            cout << "linha e coluna de destino" << endl;
-            cin >> linhaDest >> colDest;
-            cor = false;
-            ordem = false;
-           game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
-           game.imprimirTabuleiro();
+            do{
+                cout << "Jogador 1" << endl;
+                cout << "linha e coluna de origem" << endl;
+                cin >> linhaOrg >> colOrg;
+                cout << "linha e coluna de destino" << endl;
+                cin >> linhaDest >> colDest;
+                cor = false;
+                ordem = false;
+                jogardnv = game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
+                game.imprimirTabuleiro();
+            }while(jogardnv);
         }else{
             cout << "Jogador 2" << endl;
             cout << "linha e coluna de origem" << endl;

@@ -14,5 +14,5 @@ public:
     void salvarJogo();
     void imprimirTabuleiro();
     void imprimirTabuleiroAtualizado();
-    void verificaPeca(int lOrg, int cOrg, int lDest, int cDest);
+    bool verificaPeca(int lOrg, int cOrg, int lDest, int cDest);
 };

@@ -9,12 +9,12 @@ Posicao::Posicao(){
 }
 
 // setCor atribui cor a Posicao
-void Posicao::setCor(int c){
+void Posicao::setCorPosicao(int c){
     cor = c;
 }
 
 // getCor retorna cor da posicao
-int Posicao::getCor() {
+int Posicao::getCorPosicao() {
     return cor;
 }
 
@@ -29,11 +29,10 @@ bool Posicao::getOcupado() {
 }
 
 // setPecas atribui uma peca a posicao
-void Posicao::setPecas(Peca *p, char s){
+void Posicao::setPecas(Peca *p){
     if(p) {
         setOcupado(1);
         pecas = p;
-        pecas->setId(s);
     } else {
         setOcupado(0);
         pecas = p;
@@ -55,6 +54,7 @@ char Posicao::desenhaPos() {
     if(pecas == NULL) {
         return '\0';
     } else {
+        //cout << "alguma coisa "<<pecas->getId();
         return pecas->getId();
     }
 }
