@@ -48,29 +48,60 @@ int main() {
     do{
         if(ordem){
             do{
-                cout << "Jogador 1" << endl;
-                cout << "linha e coluna de origem" << endl;
+                cout << endl << "Jogador 1" << endl;
+                    cout << "Linha e Coluna de Origem" << endl;
+                    cin >> linhaOrg >> colOrg;
+                    cout << "Linha e Coluna de Destino" << endl;
+                    cin >> linhaDest >> colDest;
+                    cor = false;
+                    ordem = false;
+
+                    jogardnv = game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
+
+                try {
+
+                    if(jogardnv) {
+                        throw 'e';
+                    }
+                    
+                    game.imprimirTabuleiro();
+                }
+                catch(char e) {
+                    cout << endl << "Movimento invalido. Jogue novamente" << endl;
+                    jogardnv = true;
+                }
+                
+            } while(jogardnv);
+        } else {
+            jogardnv = true;
+            do {
+                cout << endl << "Jogador 2" << endl;
+                cout << "Linha e Coluna de Origem" << endl;
                 cin >> linhaOrg >> colOrg;
-                cout << "linha e coluna de destino" << endl;
+                cout << "Linha e Coluna de Destino" << endl;
                 cin >> linhaDest >> colDest;
-                cor = false;
-                ordem = false;
+                cor = true;
+                ordem = true;
                 jogardnv = game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
-                game.imprimirTabuleiro();
-            }while(jogardnv);
-        }else{
-            cout << "Jogador 2" << endl;
-            cout << "linha e coluna de origem" << endl;
-            cin >> linhaOrg >> colOrg;
-            cout << "linha e coluna de destino" << endl;
-            cin >> linhaDest >> colDest;
-            cor = true;
-            ordem = true;
-            game.verificaPeca(linhaOrg,colOrg,linhaDest,colDest);
-            game.imprimirTabuleiro();
-            //game.verificaPeca(linhaOrg,colOrg);
+
+                try {
+                    
+                    if(jogardnv) {
+                        throw 'e';
+                    }
+                    
+                    game.imprimirTabuleiro();
+                }
+                catch(char e) {
+                    cout << endl << "Movimento invalido. Jogue novamente" << endl;
+                    jogardnv = true;
+                }
+
+            } while(jogardnv);
+            
         }
-    }while(linhaOrg!=9);
+        
+    } while(linhaOrg!=9);
 
     while(xeque_mate){
         switch(opcao){  

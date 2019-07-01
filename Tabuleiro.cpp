@@ -105,40 +105,44 @@ void Tabuleiro::imprimeTabuleiro() {
 bool Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
     Peca *org = tabuleiro[lOrg][cOrg].getPecas();
 
+    if(org == NULL) {
+        return true;
+    }
+
     /* Brancas */
     if(org->getId() == 'P'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }else if(org->getId() == 'T'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
 
     }
     else if(org->getId() == 'C'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'B'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'K'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'Q'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
@@ -146,36 +150,36 @@ bool Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
     /*Pretas */
     if(org->getId() == 'p'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }else if(org->getId() == 't'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'c'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'b'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'k'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'q'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
@@ -272,4 +276,5 @@ bool Tabuleiro::checagemMovimentoPretas(Peca *org,int lOrg,int cOrg,int lDest,in
     }else{
         return false;
     }
+    return false;
 }
