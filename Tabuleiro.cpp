@@ -105,40 +105,44 @@ void Tabuleiro::imprimeTabuleiro() {
 bool Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
     Peca *org = tabuleiro[lOrg][cOrg].getPecas();
 
+    if(org == NULL) {
+        return true;
+    }
+
     /* Brancas */
     if(org->getId() == 'P'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }else if(org->getId() == 'T'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
 
     }
     else if(org->getId() == 'C'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'B'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'K'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'Q'){
         if(!checagemMovimentoBrancas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
@@ -146,36 +150,36 @@ bool Tabuleiro::verPeca(int lOrg, int cOrg, int lDest, int cDest){
     /*Pretas */
     if(org->getId() == 'p'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }else if(org->getId() == 't'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'c'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'b'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'k'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
     else if(org->getId() == 'q'){
         if(!checagemMovimentoPretas(org,lOrg,cOrg,lDest,cDest)){
-            cout << "Movimento invalido. Jogue novamente" << endl;
+            // cout << "Movimento invalido. Jogue novamente" << endl;
             return true;
         }
     }
@@ -259,17 +263,11 @@ bool Tabuleiro::checagemMovimentoPretas(Peca *org,int lOrg,int cOrg,int lDest,in
     Peca *dest = tabuleiro[lDest][cDest].getPecas();
 
     if(org->checaMovimento(lOrg, cOrg, lDest, cDest)) {
-        /* Comer uma peca*/
-        if(tabuleiro[lDest][cDest].getOcupado() == 1 && dest->getCor() == 1){
-            atualizarTabuleiroComido(lOrg, cOrg, lDest, cDest);
-            //cout << "comeu" << endl;
-        /*Sua peca */    
-        }else if(tabuleiro[lDest][cDest].getOcupado() == 1 && dest->getCor() == 0){
-            return false;
-        }else if(tabuleiro[lDest][cDest].getOcupado() == 0){//mover uma peca posicao vazia
+        if(tabuleiro[lDest][cDest].getOcupado() == 0){//mover uma peca posicao vazia
             atualizarTabuleiro(lOrg, cOrg, lDest, cDest);
-        }
-    }else{
+        } 
+    }else
         return false;
-    }
+    
+    return true;    
 }
