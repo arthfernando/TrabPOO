@@ -86,7 +86,7 @@ int main() {
                 }
                 catch(char e) {
                     cout << endl << "Movimento invalido. Jogue novamente" << endl;
-                    jogardnv = true;
+                    game.imprimirTabuleiro();
                 }
                 
             } while(jogardnv);
